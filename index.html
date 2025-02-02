@@ -15,45 +15,79 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Arimo:wght@400..700&family=Bitter:ital,wght@0,100..900;1,100..900&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Macondo&family=Noto+Serif+Todhri&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Purple+Purse&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            font-family: "Noto Serif Todhri", serif;
+        }
+
+        .h1 {
+            margin-bottom: 28px;
+        }
+
+        #restartBtn {
+            margin-top: 38px;
+            padding: 10px;
+        }
+        .player {
+            margin-bottom: 18px;
+        }
+    </style>
 </head>
 
 <body class="bg-black flex items-center justify-center min-h-screen">
     <div class="text-center space-y-6">
         <h1 class="h1 text-3xl font-bold text-white">Tic Tac Toe</h1>
         <div class="flex items-center justify-center gap-4 mb-8">
-            <div class="player player-active w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" id="xPlayerDisplay" onclick="selectPlayer('X')">
+            <div class="player player-active w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                id="xPlayerDisplay" onclick="selectPlayer('X')">
                 X
             </div>
-            <div><h3 id="titleHeader" class="choose text-white">Choose</h3></div>
-            <div class="player w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" id="oPlayerDisplay" onclick="selectPlayer('O')">
+            <div>
+                <h3 id="titleHeader" class="choose text-white">Choose</h3>
+            </div>
+            <div class="player w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                id="oPlayerDisplay" onclick="selectPlayer('O')">
                 O
             </div>
         </div>
         <div id="gamecontainer" class="grid grid-cols-3 gap-4 w-90 mx-auto">
             <!-- Cells with inline onclick events -->
-            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" onclick="handleCellClick(0)">
+            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                onclick="handleCellClick(0)">
             </div>
-            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" onclick="handleCellClick(1)">
+            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                onclick="handleCellClick(1)">
             </div>
-            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" onclick="handleCellClick(2)">
+            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                onclick="handleCellClick(2)">
             </div>
-            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" onclick="handleCellClick(3)">
+            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                onclick="handleCellClick(3)">
             </div>
-            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" onclick="handleCellClick(4)">
+            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                onclick="handleCellClick(4)">
             </div>
-            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" onclick="handleCellClick(5)">
+            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                onclick="handleCellClick(5)">
             </div>
-            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" onclick="handleCellClick(6)">
+            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                onclick="handleCellClick(6)">
             </div>
-            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" onclick="handleCellClick(7)">
+            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                onclick="handleCellClick(7)">
             </div>
-            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl" onclick="handleCellClick(8)">
+            <div class="cell w-20 h-20 bg-white hover:bg-gray-300 focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 active:bg-gray-400 border-2 border-gray-300 text-2xl font-bold flex items-center justify-center cursor-pointer rounded-xl"
+                onclick="handleCellClick(8)">
             </div>
         </div>
-        <button id="restartBtn" class="bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-700" onclick="restartGame()">
+        <button id="restartBtn" class="bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-700"
+            onclick="restartGame()">
             Restart
         </button>
     </div>
 </body>
 <script src="/index.js"></script>
+
 </html>
